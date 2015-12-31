@@ -55,7 +55,7 @@ class OnAfterExistsTest extends \SapphireTest
             $dog->write();
         });
 
-        $afterExists->addCondition($owner, function ($owner) use($dog) {
+        $afterExists->addCondition($owner, function ($owner) use ($dog) {
             $dog->OwnerID = $owner->ID;
         });
 
@@ -87,17 +87,17 @@ class OnAfterExistsTest extends \SapphireTest
             $dog->write();
         });
 
-        $afterExists->addCondition($owner1, function ($owner) use($dog) {
+        $afterExists->addCondition($owner1, function ($owner) use ($dog) {
             $dog->Name .= ' ' . $owner->Name;
             $dog->OwnerID = $owner->ID;
         });
 
-        $afterExists->addCondition($owner2, function ($owner) use($dog) {
+        $afterExists->addCondition($owner2, function ($owner) use ($dog) {
             $dog->Name .= ' ' . $owner->Name;
             $dog->OwnerID = $owner->ID;
         });
 
-        $afterExists->addCondition($cat, function ($cat) use($dog) {
+        $afterExists->addCondition($cat, function ($cat) use ($dog) {
             $dog->Name .= ' ' . $cat->Name;
         });
 
@@ -133,7 +133,7 @@ class OnAfterExistsTest extends \SapphireTest
 
         $batch = new \Batch();
 
-        $afterExists = new \OnAfterExists(function () use($batch, $parent, $children) {
+        $afterExists = new \OnAfterExists(function () use ($batch, $parent, $children) {
             $sets = array();
             foreach ($children as $child) {
                 $sets[] = array($parent, 'Children', $child);

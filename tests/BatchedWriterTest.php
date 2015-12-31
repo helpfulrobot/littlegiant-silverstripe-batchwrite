@@ -47,7 +47,6 @@ class BatchedWriterTest extends \SapphireTest
         $batchSizes = array(10, 30, 100, 300);
 
         foreach ($batchSizes as $size) {
-
             $owners = array();
             $dogs = array();
             $cats = array();
@@ -77,7 +76,6 @@ class BatchedWriterTest extends \SapphireTest
                 $owners[] = $owner;
                 $dogs[] = $dog;
                 $cats[] = $cat;
-
             }
 
             // writes dogs first time
@@ -133,7 +131,7 @@ class BatchedWriterTest extends \SapphireTest
 
         $writer = new \BatchedWriter();
 
-        $afterExists = new \OnAfterExists(function () use($writer, $parent, $children) {
+        $afterExists = new \OnAfterExists(function () use ($writer, $parent, $children) {
             $writer->writeManyMany($parent, 'Children', $children);
         });
 

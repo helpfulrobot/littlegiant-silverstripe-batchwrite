@@ -84,7 +84,7 @@ class MySQLiAdapter implements DBAdapter
             $dbObject = $singleton->dbObject($field);
             if ($dbObject instanceof Boolean || $dbObject instanceof Int) {
                 $typeLookup[$field] = 'i';
-            } else if ($dbObject instanceof Float || $dbObject instanceof Decimal || $dbObject instanceof Money) {
+            } elseif ($dbObject instanceof Float || $dbObject instanceof Decimal || $dbObject instanceof Money) {
                 $typeLookup[$field] = 'd';
             } else {
                 $typeLookup[$field] = 's';
@@ -100,7 +100,7 @@ class MySQLiAdapter implements DBAdapter
                 $value = $obj->getField($field);
                 if ($type === 'i') {
                     $value = intval($value);
-                } else if ($type === 'd') {
+                } elseif ($type === 'd') {
                     $value = floatval($value);
                 } else {
                     $value = '' . $value;

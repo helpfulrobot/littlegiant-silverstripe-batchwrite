@@ -107,14 +107,14 @@ class WriteCallbackTest extends \SapphireTest
         $owner->Name = 'Hilly Stewart';
         $owner->write();
 
-        $owner->onAfterExistsCallback(function ($owner) use ($dog1)  {
+        $owner->onAfterExistsCallback(function ($owner) use ($dog1) {
             $dog1->OwnerID = $owner->ID;
             $dog1->write();
         });
 
         $owner->write();
 
-        $owner->onAfterExistsCallback(function ($owner) use ($dog2)  {
+        $owner->onAfterExistsCallback(function ($owner) use ($dog2) {
             $dog2->OwnerID = $owner->ID;
             $dog2->write();
         });

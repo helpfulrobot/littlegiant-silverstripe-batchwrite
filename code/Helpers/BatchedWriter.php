@@ -84,7 +84,7 @@ class BatchedWriter
             // check if batch contains object
             if ($id && isset($this->batchLookup[$className][$id])) {
                 continue;
-            } else if (isset($this->batchSearch[$className])
+            } elseif (isset($this->batchSearch[$className])
                 && in_array($object, $this->batchSearch[$className])
             ) {
                 continue;
@@ -131,7 +131,7 @@ class BatchedWriter
             // check if stagedBatch contains object
             if ($id && isset($this->stagedBatchLookup[$key][$className][$id])) {
                 continue;
-            } else if (isset($this->stagedBatchSearch[$key][$className])
+            } elseif (isset($this->stagedBatchSearch[$key][$className])
                 && in_array($object, $this->stagedBatchSearch[$key][$className])
             ) {
                 continue;

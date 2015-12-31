@@ -67,4 +67,3 @@ class WriteCallbackExtension extends DataExtension
         }
     }
 }
-

@@ -39,7 +39,7 @@ class Batch
                 $connProperty->setAccessible(true);
                 $conn = $connProperty->getValue($connector);
                 return new MySQLiAdapter($conn);
-            } else if ($connector instanceof PDOConnector) {
+            } elseif ($connector instanceof PDOConnector) {
                 $connProperty = new ReflectionProperty('PDOConnector', 'pdoConnection');
                 $connProperty->setAccessible(true);
                 $conn = $connProperty->getValue($connector);
